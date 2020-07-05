@@ -7,8 +7,8 @@ import os
 def Blur(path, string):
     for filename in glob.glob(string): #path of raw images
        img = Image.open(filename)
-       imgSmall = img.resize((128,128),resample=Image.BILINEAR)
-       result = imgSmall.filter(ImageFilter.BLUR)
+       
+       result = img.filter(ImageFilter.BLUR)
     # save blured images to new folder with existing filename
        result.save('{}{}{}'.format(path,'/',os.path.split(filename)[1]))
 
